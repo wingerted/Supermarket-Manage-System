@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-12-26 0:49:03 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.wingerted.entity.InventoryRecord" table="INVENTORY_RECORDS">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="good" class="com.wingerted.entity.Good" fetch="join" unique="true" lazy="false" cascade="save-update">
+            <column name="GOOD_BARCODE" />
+        </many-to-one>
+        <property name="totalNumber" type="java.lang.Long">
+            <column name="TOTAL_NUMBER" />
+        </property>
+    </class>
+</hibernate-mapping>

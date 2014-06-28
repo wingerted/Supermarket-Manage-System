@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-12-13 19:00:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.wingerted.entity.Good" table="GOODS" dynamic-update="true">
+        <id name="goodBarCode" type="java.lang.Long">
+            <column name="GOOD_BARCODE" />
+            <generator class="assigned" />
+        </id>
+        <property name="goodName" type="java.lang.String">
+            <column name="GOOD_NAME" />
+        </property>
+        <property name="sellingPrice" type="java.lang.Float">
+            <column name="SELLING_PRICE" />
+        </property>
+        <property name="category" type="java.lang.String">
+            <column name="CATEGORY" /> 
+        </property>
+        <property name="shelfLife" type="java.lang.Integer">
+            <column name="SHELF_LIFE" />
+        </property>
+        <join table="GOOD_SUPPLY" fetch="join">
+          <key column="GOOD_BARCODE"></key>
+          <many-to-one name="supplier" column="SUPPLIER_ID" lazy="false"></many-to-one>
+        </join>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-12-25 23:30:09 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.wingerted.entity.PurchaseRecord" table="PURCHASE_RECORDS">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="good" class="com.wingerted.entity.Good" fetch="join" lazy="false">
+            <column name="GOOD_BARCODE" />
+        </many-to-one>
+        <property name="number" type="java.lang.Long">
+            <column name="NUMBER" />
+        </property>
+        <property name="importPrice" type="java.lang.Float">
+            <column name="IMPORT_PRICE" />
+        </property>
+        <property name="date" type="java.util.Calendar">
+            <column name="DATE" />
+        </property>
+        <property name="limitDate" type="java.util.Calendar">
+            <column name="LIMIT_DATE" />
+        </property>
+        <many-to-one name="supplier" class="com.wingerted.entity.Supplier" fetch="join">
+            <column name="SUPPLIER_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-12-28 23:44:04 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.wingerted.entity.Vip" table="VIPS">
+        <id name="vipId" type="java.lang.Long">
+            <column name="VIP_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="vipName" type="java.lang.String">
+            <column name="VIP_NAME" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="birthday" type="java.util.Calendar">
+            <column name="BIRTHDAY" />
+        </property>
+        <property name="telephone" type="java.lang.String">
+            <column name="TELEPHONE" />
+        </property>
+        <property name="vipLevel" type="java.lang.Float">
+            <column name="VIP_LEVEL" />
+        </property>
+    </class>
+</hibernate-mapping>

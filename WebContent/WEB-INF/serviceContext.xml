@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 定义部署业务逻辑组件 -->
+	
+  <bean id="staffService" class="com.wingerted.service.impl.StaffServiceImpl">
+    <property name="staffDao" ref="staffDao" />
+    <property name="inventoryRecordDao" ref="inventoryRecordDao" />
+    <property name="financialRecordDao" ref="financialRecordDao" />
+    <property name="billOfMaterialDao" ref="billOfMaterialDao" />
+    <property name="shoppingListDao" ref="shoppingListDao" />
+  </bean>
+	
+	<bean id="cashierService" class="com.wingerted.service.impl.CashierServiceImpl">
+		<property name="billOfMaterialDao" ref="billOfMaterialDao" />
+		<property name="goodDao" ref="goodDao" />
+		<property name="shoppingListDao" ref="shoppingListDao" />
+		<property name="goodDetailDao" ref="goodDetailDao" />
+		<property name="vipDao" ref="vipDao" />
+	</bean>
+	
+	<bean id="inventoryService" class="com.wingerted.service.impl.InventoryServiceImpl">
+    <property name="inventoryRecordDao" ref="inventoryRecordDao" />
+    <property name="billOfMaterialDao" ref="billOfMaterialDao" />
+  </bean>
+	
+	<bean id="purchaseService" class="com.wingerted.service.impl.PurchaseServiceImpl">
+    <property name="purchaseRecordDao" ref="purchaseRecordDao" />
+    <property name="inventoryRecordDao" ref="inventoryRecordDao" />
+    <property name="financialRecordDao" ref="financialRecordDao" />
+    <property name="billOfMaterialDao" ref="billOfMaterialDao" />
+  </bean>
+	
+	<bean id="sellingService" class="com.wingerted.service.impl.SellingServiceImpl">
+	  <property name="goodDao" ref="goodDao" />
+	  <property name="goodDetailDao" ref="goodDetailDao" />
+    <property name="billOfMaterialDao" ref="billOfMaterialDao" />
+    <property name="shoppingListDao" ref="shoppingListDao" />
+    <property name="financialRecordDao" ref="financialRecordDao" />
+  </bean>
+</beans> 

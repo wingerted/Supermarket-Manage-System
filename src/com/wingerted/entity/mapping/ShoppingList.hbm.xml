@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-12-13 19:00:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.wingerted.entity.ShoppingList" table="SHOPPING_LISTS">
+        <id name="serialNumber" type="java.lang.Long">
+            <column name="SERIAL_NUMBER" />
+            <generator class="identity" />
+        </id>
+        <property name="staffId" type="java.lang.Long">
+            <column name="STAFF_ID" />
+        </property>
+        <property name="shouldPay" type="java.lang.Float">
+            <column name="SHOULD_PAY" />
+        </property>
+        <property name="actuallyPay" type="java.lang.Float">
+            <column name="ACTUALLY_PAY" />
+        </property>
+        <property name="discount" type="java.lang.Float">
+            <column name="DISCOUNT" />
+        </property>
+        <property name="change" type="java.lang.Float">
+            <column name="CHANGE" />
+        </property>
+        <property name="time" type="java.util.Calendar">
+            <column name="TIME" />
+        </property>
+        <map name="shoppingDetails" table="SHOPPING_DETAILS" lazy="false" cascade="save-update">
+            <key column="SERIAL_NUMBER" />
+            <map-key-many-to-many column="GOOD_BARCODE" class="com.wingerted.entity.Good"></map-key-many-to-many>
+            <element column="GOOD_AMOUNT" type="java.lang.Long" not-null="true"></element>         
+        </map>
+    </class>
+</hibernate-mapping>

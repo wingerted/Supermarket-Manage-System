@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Spring管理的Action实例 -->
+	<bean id="cashierGood" class="com.wingerted.action.CashierGoodAction"
+		scope="prototype">
+		<property name="cashierService" ref="cashierService"></property>
+		<property name="shoppingList" ref="shoppingList"></property>
+		<property name="good" ref="good"></property>
+	</bean>
+
+  <bean id="inventoryManage" class="com.wingerted.action.InventoryManageAction"
+    scope="prototype">
+    <property name="inventoryService" ref="inventoryService"></property>
+  </bean>
+
+  <bean id="purchaseControl" class="com.wingerted.action.PurchaseControlAction"
+    scope="prototype">
+    <property name="purchaseService" ref="purchaseService"></property>
+  </bean>
+  
+  <bean id="sellingControl" class="com.wingerted.action.SellingControlAction"
+    scope="prototype">
+    <property name="sellingService" ref="sellingService"></property>
+    <property name="goodDetail" ref="goodDetail"></property>
+  </bean>
+  
+  <bean id="staffManage" class="com.wingerted.action.StaffManageAction"
+    scope="prototype">
+    <property name="staff" ref="staff"></property>
+    <property name="staffService" ref="staffService"></property>
+    
+  </bean>
+</beans> 

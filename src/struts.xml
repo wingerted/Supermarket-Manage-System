@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <!-- 开启使用开发模式，详细错误提示 -->
+  <constant name="struts.devMode" value="true" />
+  <!-- 连接Spring -->
+  <constant name="struts.objectFactory" value="spring" />
+  <constant name="struts.i18n.encoding" value="GBK" />
+
+  <package name="basicstruts2" extends="struts-default">
+    <action name="cashierGood" class="cashierGood">
+      <result name="success">/good_buy.jsp</result>
+      <result name="input">/good_buy.jsp</result>
+      <result name="search">/good_search.jsp</result>
+      <result name="regiester">/good_register.jsp</result>
+    </action>
+    
+    <action name="purchaseControl" class="purchaseControl">
+      <result name="create">/purchase_control.jsp</result>
+      <result name="success">/purchase_control.jsp</result>
+      <result name="query">/purchase_query.jsp</result>
+    </action>
+    
+    <action name="sellingControl" class="sellingControl">
+      <result name="selling_control">/selling_control.jsp</result>
+      <result name="selling_record">/selling_record_query.jsp</result>
+      <result name="selling_detail">/selling_detail_query.jsp</result>
+      <result name="selling_rank">/selling_rank_query.jsp</result>
+      <result name="selling_report">/selling_report_forms.jsp</result>
+    </action>
+    
+    <action name="staffManage" class="staffManage">
+      <result name="register">/staff_register.jsp</result>
+      <result name="search">/staff_manage.jsp</result>
+      <result name="login">/login.jsp</result>
+      <result name="handover">/staff_handover.jsp</result>
+      <result name="delete">/staff_manage.jsp</result>
+      <result name="show">/staff_edit.jsp</result>
+      <result name="edit">/staff_manage.jsp</result>
+      <result name="manager">/main_manager.jsp</result>
+      <result name="input">/login.jsp</result>
+      <result name="cashier">/main_cashier.jsp</result>
+    </action>
+    
+    <action name="inventoryManage" class="inventoryManage">
+      <result name="query">/inventory_query.jsp</result>
+      <result name="check">/inventory_check.jsp</result>
+    </action>
+    
+  
+  </package>
+
+
+
+</struts>

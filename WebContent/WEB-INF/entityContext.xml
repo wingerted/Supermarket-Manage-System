@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 定义部署业务逻辑组件 -->
+
+  <bean id="supplier" class="com.wingerted.entity.Supplier"></bean>
+
+	<bean id="staff" class="com.wingerted.entity.Staff"></bean>
+
+	<bean id="good" class="com.wingerted.entity.Good">
+		<property name="goodBarCode" value="0" />
+		<property name="supplier" ref="supplier" />
+	</bean>
+	
+	<bean id="vip" class="com.wingerted.entity.Vip"></bean>
+
+  <bean id="shoppingList" class="com.wingerted.entity.ShoppingList"
+    scope="prototype">
+    <property name="shoppingDetails">
+      <map>
+        <entry key-ref="good">
+          <null />
+        </entry>
+      </map>
+    </property>
+  </bean>
+	
+	<bean id="goodDetail" class="com.wingerted.entity.GoodDetail">
+	  <property name="good" ref="good"/>
+	</bean>
+  
+  <bean id="purchaseRecord" class="com.wingerted.entity.PurchaseRecord">
+    <property name="good" ref="good"/>
+    <property name="supplier" ref="supplier"/>
+  </bean>
+  
+  <bean id="inventoryRecord" class="com.wingerted.entity.InventoryRecord">
+    <property name="good" ref="good"/>
+  </bean>
+  
+  <bean id="billOfMaterial" class="com.wingerted.entity.BillOfMaterial"></bean>
+  
+  <bean id="financialRecord" class="com.wingerted.entity.FinancialRecord"></bean>
+</beans> 

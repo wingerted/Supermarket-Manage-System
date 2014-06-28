@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 定义DAO组件 -->
+	
+	<bean id="staffDao" class="com.wingerted.dao.impl.StaffDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="goodDao" class="com.wingerted.dao.impl.GoodDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+  <bean id="vipDao" class="com.wingerted.dao.impl.VipDaoImpl">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+    
+	<bean id="shoppingListDao" class="com.wingerted.dao.impl.ShoppingListDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+		
+	<bean id="goodDetailDao" class="com.wingerted.dao.impl.GoodDetailDaoImpl">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+    
+  <bean id="purchaseRecordDao" class="com.wingerted.dao.impl.PurchaseRecordDaoImpl">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+  
+  <bean id="inventoryRecordDao" class="com.wingerted.dao.impl.InventoryRecordDaoImpl">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+   
+  <bean id="billOfMaterialDao" class="com.wingerted.dao.impl.BillOfMaterialDaoImpl">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+  
+  <bean id="financialRecordDao" class="com.wingerted.dao.impl.FinancialRecordDaoImpl">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+
+</beans> 

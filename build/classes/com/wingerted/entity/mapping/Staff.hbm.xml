@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-12-13 19:00:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.wingerted.entity.Staff" table="STAFFS">
+        <id name="staffId" type="java.lang.Long">
+            <column name="STAFF_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="staffName" type="java.lang.String">
+            <column name="STAFF_NAME" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="birthday" type="java.util.Calendar">
+            <column name="BIRTHDAY" />
+        </property>
+        <property name="telephone" type="java.lang.String">
+            <column name="TELEPHONE" />
+        </property>
+        <property name="job" type="java.lang.String">
+            <column name="JOB" />
+        </property>
+    </class>
+</hibernate-mapping>
